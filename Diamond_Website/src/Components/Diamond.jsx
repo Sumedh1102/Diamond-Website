@@ -23,7 +23,7 @@ const Diamond = forwardRef((props, ref) => {
         <mesh ref={ref} geometry={geometry} {...props}>
             <MeshTransmissionMaterial
                 backside
-                samples={8}
+                samples={4}
                 thickness={1.5}
                 chromaticAberration={1}
                 transmission={1}

@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { useInView } from 'framer-motion';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Environment, Center } from '@react-three/drei';
 import Diamond from '../Components/Diamond';
@@ -14,9 +15,9 @@ const RotatingDiamond = () => {
 
   return (
     <Center>
-      <Diamond 
-        ref={diamondRef} 
-        scale={45} 
+      <Diamond
+        ref={diamondRef}
+        scale={45}
         rotation={[Math.PI / 2, 0, 0]} // Side view
       />
     </Center>
@@ -24,9 +25,17 @@ const RotatingDiamond = () => {
 };
 
 const DiamondScene = () => {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { margin: "200px" });
+
   return (
-    <div className="w-full h-full">
-      <Canvas camera={{ position: [0, 0, 100], fov: 45 }}>
+    <div ref={containerRef} className="w-full h-full">
+      <Canvas
+        frameloop={isInView ? "always" : "never"}
+        dpr={[1, 2]}
+        gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+        camera={{ position: [0, 0, 100], fov: 45 }}
+      >
         <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} />
         <pointLight position={[-10, -10, -10]} intensity={1} />
