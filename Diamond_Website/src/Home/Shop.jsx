@@ -53,7 +53,7 @@ const DiamondShapesSlider = () => {
 
   const scroll = (direction) => {
     if (!scrollRef.current) return;
-    const scrollAmount = 320;
+    const scrollAmount = window.innerWidth < 640 ? 192 : window.innerWidth < 768 ? 224 : 320;
 
     scrollRef.current.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
@@ -62,31 +62,31 @@ const DiamondShapesSlider = () => {
   };
 
   return (
-    <div className="w-full bg-[#1A1A1A] px-8 overflow-hidden min-h-fit">
+    <div className="w-full bg-[#1A1A1A] px-4 sm:px-6 lg:px-8 overflow-hidden min-h-fit py-8 sm:py-12 lg:py-16">
       {/* Header */}
-      <div className="max-w-7xl mx-auto mb-16">
-        <div className="flex items-start justify-between">
-          <h1 className="text-7xl font-bold text-white leading-tight">
+      <div className="max-w-7xl mx-auto mb-8 sm:mb-12 lg:mb-16">
+        <div className="flex flex-col lg:flex-row items-start lg:items-start justify-between gap-6 lg:gap-0">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
             Shapes Of
             <br />
             Diamond
           </h1>
 
-          <div className="flex items-center gap-8">
-            <p className="text-white/80 text-lg translate-y-12 -translate-x-56">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 lg:gap-8 w-full lg:w-auto">
+            <p className="text-white/80 text-sm sm:text-base lg:text-lg lg:translate-y-12 lg:-translate-x-56">
               The World&apos;s Greatest Lab Grown Diamonds.
             </p>
 
             <div className="flex gap-3">
               <button
                 onClick={() => scroll("left")}
-                className="w-12 h-12 rounded-full border border-gray-600 text-white hover:border-white transition"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gray-600 text-white hover:border-white transition"
               >
                 ‹
               </button>
               <button
                 onClick={() => scroll("right")}
-                className="w-12 h-12 rounded-full border border-gray-600 text-white hover:border-white transition"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gray-600 text-white hover:border-white transition"
               >
                 ›
               </button>
@@ -114,21 +114,21 @@ const DiamondShapesSlider = () => {
             {duplicatedDiamonds.map((diamond, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-64 px-6 group"
+                className="flex-shrink-0 w-48 sm:w-56 md:w-64 px-3 sm:px-4 md:px-6 group"
               >
-                <div className="flex flex-col items-center py-12 border-l border-white/10">
+                <div className="flex flex-col items-center py-6 sm:py-8 md:py-12 border-l border-white/10">
                   <img
                     src={diamond.image}
                     alt={diamond.name}
                     loading="lazy"
                     className="
-                      w-56 h-56 object-contain
+                      w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 object-contain
                       grayscale
                       transition-all duration-500
-                      ml-14
+                      ml-6 sm:ml-8 md:ml-10 lg:ml-14
                     "
                   />
-                  <h3 className="mt-8 text-white text-xl font-light tracking-wider ml-14">
+                  <h3 className="mt-4 sm:mt-6 md:mt-8 text-white text-base sm:text-lg md:text-xl font-light tracking-wider ml-6 sm:ml-8 md:ml-10 lg:ml-14">
                     {diamond.name}
                   </h3>
                 </div>
@@ -145,7 +145,27 @@ const DiamondShapesSlider = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-${diamonds.length * 256}px);
+            transform: translateX(-${diamonds.length * 192}px);
+          }
+        }
+        @media (min-width: 640px) {
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-${diamonds.length * 224}px);
+            }
+          }
+        }
+        @media (min-width: 768px) {
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-${diamonds.length * 256}px);
+            }
           }
         }
       `}</style>

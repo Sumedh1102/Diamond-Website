@@ -55,37 +55,75 @@ const DiamondStorytelling = () => {
   }, []);
 
   return (
-    <div className="bg-[#1A1A1A] min-h-screen p-10">
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        {/* Left Column - Sticky Image Panel */}
-        <div className="relative h-screen lg:sticky lg:top-0 order-1 lg:order-1">
-          <div className="absolute inset-0 flex items-center justify-center p-8 lg:p-16">
-            {sections.map((section, index) => (
-              <div
-                key={section.id}
-                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                  activeSection === index ? 'opacity-100' : 'opacity-0'
-                }`}
-              >
-                <img
-                  src={section.image}
-                  alt={section.heading}
-                  className="w-full h-full object-cover"
-                />
+    <div className="bg-[#1A1A1A] min-h-fit">
+      {/* Mobile Layout - Stacked image then content */}
+      <div className="lg:hidden">
+        {sections.map((section, index) => (
+          <div 
+            key={section.id}
+            ref={el => sectionsRef.current[index] = el}
+            className="mb-8"
+          >
+            {/* Image */}
+            <div className="h-[60vh] sm:h-[70vh] p-4 sm:p-6">
+              <img
+                src={section.image}
+                alt={section.heading}
+                className="w-full h-full object-cover rounded-lg shadow-xl"
+              />
+            </div>
+            
+            {/* Content */}
+            <div className="px-5 sm:px-8 py-8 sm:py-12">
+              <div className="max-w-xl mx-auto">
+                <p className="text-gray-400 text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 font-light">
+                  {section.label}
+                </p>
+                <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-light mb-6 leading-tight">
+                  {section.heading}
+                </h2>
+                <p className="text-gray-300 text-base sm:text-lg leading-relaxed font-light">
+                  {section.description}
+                </p>
               </div>
-            ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop Layout - Side by side with sticky image */}
+      <div className="hidden lg:grid grid-cols-2">
+        {/* Left Column - Sticky Image Panel */}
+        <div className="relative h-screen sticky top-0">
+          <div className="absolute inset-0 p-8 xl:p-16">
+            <div className="relative w-full h-full">
+              {sections.map((section, index) => (
+                <div
+                  key={section.id}
+                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                    activeSection === index ? 'opacity-100' : 'opacity-0'
+                  }`}
+                >
+                  <img
+                    src={section.image}
+                    alt={section.heading}
+                    className="w-full h-full object-cover rounded-lg shadow-2xl"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Right Column - Scrollable Content */}
-        <div className="order-2 lg:order-2">
+        <div>
           {sections.map((section, index) => (
             <div
               key={section.id}
               ref={el => sectionsRef.current[index] = el}
-              className="min-h-screen flex items-center justify-center px-8 lg:px-16 py-20"
+              className="min-h-screen flex items-center justify-center px-12 lg:px-16 py-20"
             >
-              <div className="max-w-xl">
+              <div className="max-w-xl w-full">
                 <p className="text-gray-400 text-sm tracking-[0.3em] mb-6 font-light">
                   {section.label}
                 </p>
@@ -99,20 +137,6 @@ const DiamondStorytelling = () => {
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="fixed bottom-8 right-8 flex flex-col items-center gap-2">
-        {sections.map((section, index) => (
-          <div
-            key={section.id}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              activeSection === index 
-                ? 'bg-white scale-125' 
-                : 'bg-gray-600'
-            }`}
-          />
-        ))}
       </div>
     </div>
   );

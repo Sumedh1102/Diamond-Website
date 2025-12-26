@@ -58,23 +58,14 @@ const LatestNews = () => {
         <div className="flex items-start justify-between mb-16">
           <div>
             <div className="inline-flex items-center gap-3 px-5 py-2.5 border border-gray-700 rounded-full mb-6">
-              <div className="w-1.5 h-1.5 rounded-full bg-amber-700"></div>
               <span className="text-gray-300 text-xs uppercase tracking-widest font-medium">
                 Our Blogs
               </span>
-              <div className="w-1.5 h-1.5 rounded-full bg-amber-700"></div>
             </div>
             <h1 className="text-white text-7xl font-bold">
               Latest News
             </h1>
           </div>
-          <a 
-            href="#" 
-            className="text-white text-sm flex items-center gap-2 hover:opacity-70 transition-opacity pt-16 group"
-          >
-            <span>View All Our News</span>
-            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </a>
         </div>
 
         {/* Blog Cards Grid */}
