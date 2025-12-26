@@ -11,6 +11,7 @@ import Header from '../Home/HeroS'
 const Home = () => {
   return (
    <>
+   <Hero/>
    <Header />
    <ScrollingText/> 
    <Shop/>
