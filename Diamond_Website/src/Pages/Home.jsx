@@ -6,12 +6,14 @@ import ScrollingText from '../Home/ScrollingText'
 import Quality from '../Home/Quality'  
 import Featured from '../Home/Featured' 
 import Blogs from '../Home/Blogs' 
-import Header from '../Home/HeroS'   
+import Header from '../Home/HeroS'  
+import Hero2 from '../Home/Hero2' 
 
 const Home = () => {
   return (
    <>
    <Hero/>
+   <Hero2/>
    <Header />
    <ScrollingText/> 
    <Shop/>

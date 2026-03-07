@@ -41,7 +41,7 @@ export default function OurStory() {
           {/* Story Text */}
           <div className="md:col-span-8">
             <p className="text-lg md:text-xl lg:text-4xl leading-relaxed md:leading-loose text-neutral-100 font-normal">
-              Carbon Star diamonds is a prime manufacturer and supplier of lab grown diamonds since 2020. We have partnered with trusted source for manufacturing diamonds with highly trained professionals who ensure high-point quality checks to produce the best diamonds for our customers worldwide. Our lab diamonds represent the future of conflict free diamonds while still maintaining the highest standards of worker safety and respect for environmental sustainability.
+              NavKar Diamonds is a prime manufacturer and supplier of lab grown diamonds since 2020. We have partnered with trusted source for manufacturing diamonds with highly trained professionals who ensure high-point quality checks to produce the best diamonds for our customers worldwide. Our lab diamonds represent the future of conflict free diamonds while still maintaining the highest standards of worker safety and respect for environmental sustainability.
             </p>
           </div>
         </div>

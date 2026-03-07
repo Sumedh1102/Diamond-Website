@@ -1,7 +1,7 @@
 export default function DiamondHero() {
   return (
     <section className="relative min-h-fit w-full bg-[#0f0f0f] px-4 sm:px-6 md:px-12 lg:px-20 py-12 sm:py-16 md:py-20 overflow-hidden flex items-center">
-      
+
       {/* Subtle diamond pattern overlay */}
       <div
         className="absolute inset-0 opacity-[0.06]"
@@ -13,13 +13,13 @@ export default function DiamondHero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto w-full">
-        
+
         {/* Heading */}
         <h1 className="text-white font-bold leading-[1.1] max-w-4xl">
           <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
             Welcome to <br className="hidden sm:block" />
             <span className="sm:hidden"> </span>
-            Carbonstar Diamonds
+            NavKar Diamonds
           </span>
         </h1>
 

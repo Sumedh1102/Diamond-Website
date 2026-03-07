@@ -19,7 +19,7 @@ export default function VisionHero() {
         <div className="text-center max-w-4xl">
           {/* Small Top Text */}
           <p className="text-white text-xs md:text-sm tracking-widest uppercase opacity-70 mb-6 font-light">
-            @ Carbonstar Diamonds
+            @ NavKar Diamonds
           </p>
           
           {/* Main Heading */}

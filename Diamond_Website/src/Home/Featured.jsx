@@ -29,12 +29,12 @@ const DiamondScene = ({ scale }) => {
   const isInView = useInView(containerRef, { margin: "200px" });
 
   return (
-    <div ref={containerRef} className="w-full h-full">
+    <div ref={containerRef} className="w-full h-full overflow-visible">
       <Canvas
         frameloop={isInView ? "always" : "never"}
         dpr={[1, 2]}
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
-        camera={{ position: [0, 0, 100], fov: 45 }}
+        camera={{ position: [0, 0, 100], fov: 50 }}
       >
         <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} />
@@ -63,13 +63,13 @@ const LuxuryFeaturedSection = () => {
   }, []);
 
   // Responsive values
-  const diamondScale = isMobile ? 25 : isTablet ? 35 : 45;
+  const diamondScale = isMobile ? 25 : isTablet ? 35 : 38;
   const containerSize = isMobile ? 'w-[300px] h-[300px]' : isTablet ? 'w-[450px] h-[450px]' : 'w-[600px] h-[600px]';
   const centerDiamondSize = isMobile ? 'w-40 h-40' : isTablet ? 'w-60 h-60' : 'w-80 h-80';
   const textSize = isMobile ? 'text-[12px]' : isTablet ? 'text-[14px]' : 'text-[18px]';
 
   const text =
-    "FEATURED PRODUCTS · CARBONSTAR DIAMONDS · FEATURED PRODUCTS · CARBONSTAR DIAMONDS · FEATURED PRODUCTS ";
+    "FEATURED PRODUCTS · NAVKAR DIAMONDS · FEATURED PRODUCTS · NAVKAR DIAMONDS · FEATURED PRODUCTS ";
   const chars = text.split('');
 
   return (
@@ -122,7 +122,7 @@ const LuxuryFeaturedSection = () => {
             </div>
 
             {/* Center Diamond */}
-            <div className={`relative z-10 ${centerDiamondSize} flex items-center justify-center`}>
+            <div className={`relative z-10 ${centerDiamondSize} flex items-center justify-center overflow-visible`}>
               <DiamondScene scale={diamondScale} />
             </div>
 

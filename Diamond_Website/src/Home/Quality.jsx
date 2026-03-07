@@ -69,7 +69,7 @@ const DiamondStorytelling = () => {
               <img
                 src={section.image}
                 alt={section.heading}
-                className="w-full h-full object-cover rounded-lg shadow-xl"
+                className="w-full h-full object-cover rounded-3xl"
               />
             </div>
             

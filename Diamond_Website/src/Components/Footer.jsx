@@ -74,8 +74,8 @@ export default function LuxuryFooter() {
           <div>
             <h3 className="text-white text-lg font-semibold mb-6">Say Hello</h3>
             <div className="space-y-4">
-              <a href="mailto:carbonstardiamonds@gmail.com" className="text-gray-400 hover:text-white transition-colors block text-sm">
-                carbonstardiamonds@gmail.com
+              <a href="mailto:navkardiamonds@gmail.com" className="text-gray-400 hover:text-white transition-colors block text-sm">
+                navkardiamonds@gmail.com
               </a>
               <a href="tel:+917567421124" className="text-white hover:text-gray-300 transition-colors block text-lg font-medium">
                 +91 75674 21124
@@ -98,18 +98,16 @@ export default function LuxuryFooter() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Brand Logo */}
           <div className="flex items-center gap-2">
-            <span className="text-white text-xl font-light tracking-widest">CARBON</span>
-            <span className="text-[#c9a961] text-xl font-light">ST</span>
-            <span className="text-[#c9a961] text-2xl">✦</span>
-            <span className="text-[#c9a961] text-xl font-light">R</span>
-            <span className="text-white text-xl font-light tracking-widest">DIAMONDS</span>
+            <span className="text-white text-xl font-light tracking-widest">NAV</span>
+            <span className="text-[#c9a961] text-xl font-light">KAR</span>
+            <span className="text-white text-xl font-light tracking-widest ml-2">DIAMONDS</span>
           </div>
 
           {/* Copyright */}
           <div className="text-gray-500 text-sm text-center md:text-right">
             Copyright ©2023. All Rights Reserved{' '}
             <a href="#" className="text-[#c9a961] hover:text-[#d4b676] transition-colors">
-              Carbonstar Diamonds
+              NavKar Diamonds
             </a>
             .
           </div>

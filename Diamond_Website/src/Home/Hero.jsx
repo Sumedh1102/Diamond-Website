@@ -102,7 +102,10 @@ export default function KapuGemsHero() {
                 </ScrollControls>
             </Canvas>
             <div
-                className="absolute inset-0 w-full h-full bg-[#1A1A1A] -z-10"
+                className="absolute inset-0 w-full h-full -z-10 bg-cover bg-center bg-no-repeat"
+                style={{
+                    backgroundImage: 'url("https://i.postimg.cc/j2hZZjcH/Chat-GPT-Image-Mar-6-2026-11-02-51-PM.png")'
+                }}
             />
         </div>
     )
